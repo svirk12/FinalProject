@@ -1,0 +1,45 @@
+<div class="widget-box">
+  <label><div class="widget-title cursor-pointer">
+    <span class="icon">
+      <input type="checkbox" name="product" id="online_auction_list_chk" href="#online_auction_list_div" class="toggle" />
+    </span>
+    <h5>Products Details</h5>
+  </div></label>
+  <div class="widget-content nopadding" id="online_auction_list_div" >
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Date and Time</th>
+          <th>Operation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% unless products.blank? %>
+          <% products.each do |product| %>
+            <tr>
+              <td><%= product.title %></td>
+              <td style='width: 400px;'><%= product.description %></td>
+              <td><%= date_formate(product.created_at) %></td>
+              <td style='text-align: center;'>
+                <%= link_to 'Edit', edit_user_product_path(product), 
+                  :class=>"btn btn-mini btn-primary" %>
+                <%= link_to 'Preview', user_product_path(product), 
+                  :class=>"btn btn-mini btn-inverse" %>
+                <%= link_to 'Delete', user_product_path(product), method: :delete, 
+                  :class=>"btn btn-mini btn-danger",
+                  :confirm => 'Are you sure do you want to delete this product?',
+                  "original-title" => "delete your product" %>
+              </td>
+            </tr>
+          <% end %>
+        <% else %>
+          <tr>
+            <td colspan="3" class="row_font_color"><h4>There are no products found!</h4></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

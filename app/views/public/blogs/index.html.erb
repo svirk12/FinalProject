@@ -1,0 +1,65 @@
+  <div id="wrapper center">
+    <div id="examples_outer">
+      <div id="slider_container_1">
+        <div id="SliderName">
+          <% @products.limit(10).each do |product| %>
+            <%= image_tag(product.product_image) %>
+          <% end %>
+        </div>
+        <div class="c"></div>
+        <div id="SliderNameNavigation"></div>
+        <div class="c"></div>
+        <script type="text/javascript">
+          // we created new effect and called it 'demo01'. We use this name later.
+          Sliderman.effect({name: 'demo01', cols: 10, rows: 5, delay: 10, fade: true, order: 'straight_stairs'});
+
+          var demoSlider = Sliderman.slider({container: 'SliderName', width: 640, height: 300, effects: 'demo01',
+          display: {
+            pause: true, // slider pauses on mouseover
+            //autoplay: 3000, // 3 seconds slideshow
+            always_show_loading: 200, // testing loading mode
+            description: {background: '#ffffff', opacity: 0.5, height: 50, position: 'bottom'}, // image description box settings
+            loading: {background: '#000000', opacity: 0.2, image: '/assets/loading.gif'}, // loading box settings
+            buttons: {opacity: 1, prev: {className: 'SliderNamePrev', label: ''}, next: {className: 'SliderNameNext', label: ''}}, // Next/Prev buttons settings
+            navigation: {container: 'SliderNameNavigation', label: '&nbsp;'} // navigation (pages) settings
+          }});
+        </script>
+        <div class="c"></div>
+      </div>
+      <div class="c"></div>
+    </div>
+    <div class="c"></div>
+  </div>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span10 offset1">
+      <div class="widget-box">
+        <div class="widget-title">
+          <span class="icon">
+            <i class="icon-refresh"></i>
+          </span> 
+          <h5>All Products</h5>
+        </div>
+        <div class="widget-content nopadding updates">
+          <% @products.each do |product| %>
+            <div class="new-update clearfix">
+              <%= image_tag(product.product_logo, :style => "float: left; margin-right: 20px;")%>
+              <span class="update-done">                    
+                <a href="<%= public_blog_path(product) %>" title=""><strong><%= product.title %></strong></a>
+                <span><%= product.description %></span>
+              </span>
+              <span class="update-date"><span class="update-day"><%= day_format(product.created_at) %></span><%= month_format(product.created_at) %></span>
+            </div>
+            <% if product.present? && product.comments.present? %>
+              <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; comments:</strong>
+            <% end %>
+            <div id="comments">
+              <%= render :partial => 'comment', :collection => product.comments %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

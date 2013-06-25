@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span10 offset1">
+      <div class="widget-box">
+        <div class="widget-title">
+          <span class="icon">
+            <i class="icon-refresh"></i>
+          </span> 
+          <h5>Product</h5>
+          <span class='pull-right'>
+            <%= link_to 'Back', public_blogs_path, :class => 'btn btn-inverse' %>
+          </span>
+        </div>
+        <div class="widget-content nopadding updates">
+          <div class="new-update clearfix">
+            <%= image_tag(@product.product_logo, :style => "float: left; margin-right: 20px;")%>
+            <span class="update-done">                    
+              <a href="<%= public_blog_path(@product) %>" title=""><strong><%= @product.title %></strong></a>
+              <span><%= @product.description %></span>
+            </span>
+            <span class="update-date"><span class="update-day"><%= day_format(@product.created_at) %></span><%= month_format(@product.created_at) %></span>
+          </div><br/>
+          COMMENTS :
+          <div id="comments">
+            <%= render :partial => 'comment', :collection => @comments %>
+          </div>
+
+          <%= simple_form_for(@comment, :url => public_blogs_path(:id => @product.id), :remote => true) do |f| %>
+            <%= f.text_area :content, :rows => '3' %>
+            <%= f.submit 'Submit', :class => 'btn btn-primary' %>
+            <span id="loader" style="display: none;">
+              <%= image_tag("/assets/spinner.gif") %>
+            </span>
+          <% end %>
+        </div>        
+      </div>            
+    </div>
+  </div>
+</div>

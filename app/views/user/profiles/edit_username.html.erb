@@ -1,0 +1,11 @@
+<% content_for :header do %>
+  <h1>Update Your Username</h1>
+<% end %>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span8 offset2">
+      <%= render :partial => 'change_username', :locals => {:resource => @resource } %>
+    </div>
+  </div>
+</div>

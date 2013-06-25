@@ -1,0 +1,29 @@
+<% content_for :header do %>
+  <h1>Update your product</h1>
+<% end %>
+
+<div class="container-fluid">
+  <% if @product.errors.any? %>
+    <%= error_message(@product.errors.full_messages, 'alert-error')%>
+  <% end %>
+  <div class="row-fluid no_margin_top">
+    <div class="span9 offset1">
+      <%= simple_form_for(@product, :url => user_product_path, 
+        :html => { :method => :put, :class=>"form-horizontal", :multipart => true } ) do |f| %>
+        <div class="widget-box">
+          <label>
+            <div class="widget-title cursor-pointer">
+              <span class="icon">
+                <input type="checkbox" name="event" id='' href="#add_content" class="toggle" />                  
+              </span>
+              <h5>Edit/Update product</h5>
+            </div>
+          </label>
+          <div class="widget-content nopadding" id="add_content">        
+            <%= render :partial => "form", :locals => { :f => f } %>
+          </div>
+        </div>
+      <% end %>      
+    </div>
+  </div>
+</div>

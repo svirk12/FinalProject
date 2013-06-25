@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module ApplicationHelper - App Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/helpers/application_helper.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-date_formate">#date_formate</a>
+    
+    <li><a href="#method-i-day_format">#day_format</a>
+    
+    <li><a href="#method-i-error_message">#error_message</a>
+    
+    <li><a href="#method-i-like_status">#like_status</a>
+    
+    <li><a href="#method-i-month_format">#month_format</a>
+    
+    <li><a href="#method-i-truncate_string">#truncate_string</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./User.html">User</a>
+  
+    <li><a href="./User/BaseController.html">User::BaseController</a>
+  
+    <li><a href="./User/DashboardController.html">User::DashboardController</a>
+  
+    <li><a href="./User/ProductsController.html">User::ProductsController</a>
+  
+    <li><a href="./User/ProfilesController.html">User::ProfilesController</a>
+  
+    <li><a href="./Public.html">Public</a>
+  
+    <li><a href="./Public/BaseController.html">Public::BaseController</a>
+  
+    <li><a href="./Public/BlogsController.html">Public::BlogsController</a>
+  
+    <li><a href="./Profile.html">Profile</a>
+  
+    <li><a href="./Profile/Application.html">Profile::Application</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./Comment.html">Comment</a>
+  
+    <li><a href="./HomeController.html">HomeController</a>
+  
+    <li><a href="./ImageUploader.html">ImageUploader</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./Product.html">Product</a>
+  
+    <li><a href="./UserRegistrationsController.html">UserRegistrationsController</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module ApplicationHelper</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-date_formate" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">date_formate</span><span
+            class="method-args">(date)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>date helper that will show mm/dd/yyyy h:m format</p>
+          
+
+          
+          <div class="method-source-code" id="date_formate-source">
+            <pre><span class="ruby-comment"># File app/helpers/application_helper.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">date_formate</span>(<span class="ruby-identifier">date</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">date</span>.<span class="ruby-identifier">blank?</span>
+  <span class="ruby-identifier">date</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">'%m/%d/%Y %I:%M %p'</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- date_formate-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- date_formate-method -->
+
+    
+      <div id="method-i-day_format" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">day_format</span><span
+            class="method-args">(date)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>date helper that will only show date</p>
+          
+
+          
+          <div class="method-source-code" id="day_format-source">
+            <pre><span class="ruby-comment"># File app/helpers/application_helper.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">day_format</span>(<span class="ruby-identifier">date</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">date</span>.<span class="ruby-identifier">blank?</span>
+  <span class="ruby-identifier">date</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">'%d'</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- day_format-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- day_format-method -->
+
+    
+      <div id="method-i-error_message" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">error_message</span><span
+            class="method-args">(err_msg, classes)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>custom message helper use every where need to show error message box</p>
+          
+
+          
+          <div class="method-source-code" id="error_message-source">
+            <pre><span class="ruby-comment"># File app/helpers/application_helper.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">error_message</span>(<span class="ruby-identifier">err_msg</span>, <span class="ruby-identifier">classes</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">err_msg</span>.<span class="ruby-identifier">blank?</span>
+    <span class="ruby-identifier">content_tag</span>(<span class="ruby-value">:div</span>, <span class="ruby-value">:class</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">classes</span>) <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">list_items</span> = <span class="ruby-identifier">err_msg</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">msg</span><span class="ruby-operator">|</span> <span class="ruby-identifier">content_tag</span>(<span class="ruby-value">:li</span>, <span class="ruby-identifier">msg</span>) }
+      <span class="ruby-identifier">content_tag</span>(<span class="ruby-value">:ul</span>, <span class="ruby-identifier">content_tag</span>(<span class="ruby-value">:a</span>,<span class="ruby-string">'&amp;times'</span>.<span class="ruby-identifier">html_safe</span>, <span class="ruby-value">:class</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;close&quot;</span>, <span class="ruby-string">'data-dismiss'</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;alert&quot;</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">list_items</span>.<span class="ruby-identifier">join</span>.<span class="ruby-identifier">html_safe</span>, <span class="ruby-value">:class</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;set_err_msg&quot;</span> )
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- error_message-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- error_message-method -->
+
+    
+      <div id="method-i-like_status" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">like_status</span><span
+            class="method-args">(post_id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>it will return like or unlike status with count of likes like 1 like or 0
+unlike</p>
+          
+
+          
+          <div class="method-source-code" id="like_status-source">
+            <pre><span class="ruby-comment"># File app/helpers/application_helper.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">like_status</span>(<span class="ruby-identifier">post_id</span>)
+  <span class="ruby-identifier">post</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">post_id</span>).<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">count</span> = <span class="ruby-node">&quot;&lt;span class='badge badge-success'&gt; #{post.get_likes_count} &amp;nbsp&lt;/span&gt;&quot;</span>.<span class="ruby-identifier">html_safe</span>
+  <span class="ruby-identifier">post</span>.<span class="ruby-identifier">is_like?</span>(<span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">id</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">count</span><span class="ruby-operator">+</span><span class="ruby-string">&quot; UnLike&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">count</span><span class="ruby-operator">+</span><span class="ruby-string">&quot; Like&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">present?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- like_status-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- like_status-method -->
+
+    
+      <div id="method-i-month_format" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">month_format</span><span
+            class="method-args">(date)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>date helper that will show month name like jan, feb, may etc.…</p>
+          
+
+          
+          <div class="method-source-code" id="month_format-source">
+            <pre><span class="ruby-comment"># File app/helpers/application_helper.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">month_format</span>(<span class="ruby-identifier">date</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">date</span>.<span class="ruby-identifier">blank?</span>
+  <span class="ruby-identifier">date</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">'%b'</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- month_format-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- month_format-method -->
+
+    
+      <div id="method-i-truncate_string" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">truncate_string</span><span
+            class="method-args">(str , length)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="truncate_string-source">
+            <pre><span class="ruby-comment"># File app/helpers/application_helper.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">truncate_string</span>(<span class="ruby-identifier">str</span> , <span class="ruby-identifier">length</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">truncate</span>(<span class="ruby-identifier">length</span>, <span class="ruby-value">:separator</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'...'</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-string">''</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- truncate_string-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- truncate_string-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

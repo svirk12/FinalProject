@@ -1,0 +1,30 @@
+<div class="control-group">
+  <label class="control-label">File upload (Logo) </label>
+  <div class="controls">
+    <%= image_tag(@product.image_url(:image)) if @product.image? %>
+    <%= f.file_field :image %>
+    <i class="icon-question-sign tipsy-tooltip" original-title="Size should be 640hx300w"> </i>
+  </div>
+</div>
+<div class="control-group">
+  <label class="control-label">Title</label>
+  <div class="controls">
+    <%= f.text_field :title, :placeholder => "Title"%>
+  </div>
+</div>
+<div class="control-group">
+  <label class="control-label">Description</label>
+  <div class="controls">
+    <%= f.text_area :description, :rows =>'5', :placeholder => "Description"%>
+  </div>
+</div>
+<div class="control-group">
+  <label class="control-label">Value</label>
+  <div class="controls">
+    <%= f.text_field :value, :rows =>'5', :placeholder => "Value"%>
+  </div>
+</div>
+
+<div class="form-actions">
+  <%= f.submit @product.new_record? ? "Submit" : "Update", :class=>"btn btn-primary offset4" %>
+</div>

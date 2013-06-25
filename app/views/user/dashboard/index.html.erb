@@ -1,0 +1,54 @@
+<% content_for :header do %>
+  <h1>Dashboard</h1>
+     <div class='row'>
+      <div class="span4"></div>
+      
+    </div>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a>
+  <a href="#" class="current">Dashboard</a>
+<% end %>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span6">
+      <div class="widget-box">
+        <div class="widget-title">
+          <span class="icon"><i class="icon-file"></i></span>
+          <h5>Recent products</h5>
+          <% product_count = @recent_products.present? ? @recent_products.count : '0' %>
+          <span title="54 total products" class="label label-info tip-left"><%= product_count %></span>
+        </div>
+        <div class="widget-content nopadding">
+          <ul class="recent-posts">
+            <%= render :partial => 'recent_product', :collection => @recent_products %>
+            <li class="viewall">
+              <a href="<%= user_products_path %>" class="tip-top" data-original-title="View all products"> + View all + </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </div>
+  <div class="span6">
+    <div class="widget-box">
+      <div class="widget-title">
+        <span class="icon"><i class="icon-comment"></i></span>
+        <h5>Recent Comments</h5>
+        <% comment_count = @recent_comments.present? ? @recent_comments.count : '0' %>
+        <span title="88 total comments" class="label label-info tip-left"><%= comment_count %></span>
+      </div>
+      <div class="widget-content nopadding">
+        <ul class="recent-posts">
+          <%= render :partial => 'recent_comment', :collection => @recent_comments %>
+          <li class="viewall">
+            <a href="#" class="tip-top" data-original-title="View all products"> + View all + </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+

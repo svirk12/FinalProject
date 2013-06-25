@@ -1,0 +1,18 @@
+development:
+  adapter: postgresql
+  database: profile_development
+  username: andrew  
+  password: t1p1faso
+
+test:
+  adapter: postgresql
+  database: profile_test
+  username: andrew
+  password: t1p1faso
+
+production:
+  adapter: postgresql
+  database: profile_production
+  username: andrew 
+  password: t1p1faso
+
